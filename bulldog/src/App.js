@@ -4,6 +4,8 @@ import chipLogo from './images/logo.png'
 import home_icon from './images/home_icon.svg'
 import present_icon from './images/present_icon.svg'
 import mypage_icon from './images/mypage_icon.svg'
+import icon from './images/clerk.png'
+
 const header = () => {
   return(
     <header className="App-header">
@@ -12,6 +14,27 @@ const header = () => {
       </div>
     </header>
 
+  )
+}
+
+const constent = () => {
+  return(
+    <a href="#">
+    <div className="flex-contents list-inner">
+      <div className="flex-list clerk-left">
+        <img src={icon} alt="よっしー"/>
+      </div>
+      <div className="flex-list clerk-right">
+        <div className="clerk-summary">
+          <p className="clerk-summary-name">よっしー</p>
+          <p className="clerk-summary-restaurant">居酒屋チップ  渋谷道玄坂店</p>
+        </div>
+        <div className="clerk-point">
+          <p>134<span>ありがとう</span></p>
+        </div>
+      </div>
+    </div>
+  </a>
   )
 }
 
@@ -51,6 +74,18 @@ class App extends Component {
     return (
       <div className="App">
         {header()}
+        <section id="home">
+        <div className="inner">
+          <div className="home-title">
+            <p>登録している店員さん</p>
+          </div>
+          <ul className='home-list'>
+            <li>
+              {constent()}
+            </li>
+          </ul>
+          </div>
+        </section>
         {footer()}
       </div>
     );
