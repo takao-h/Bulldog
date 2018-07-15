@@ -13,12 +13,27 @@ const header = () => {
       <h1><img src={chipLogo}/></h1>
       </div>
     </header>
-
   )
 }
 
-const constent = () => {
+const list = [];
+const data = [
+  {name: "さざえ", point: "4000", shop: "居酒屋磯野　渋谷店"},
+  {name: "なみへい", point: "9090", shop: "居酒屋磯野　新宿ゴールデン街店"},
+  {name: "ますお", point: "0", shop: "居酒屋磯野　渋谷東口店"},
+  {name: "ふね", point: "19000", shop: "居酒屋チップ  自由が丘東口店"},
+  {name: "たらお", point: "280", shop: "Bistro ISONO"},
+  {name: "かつお", point: "10", shop: "BAR Orsan"},
+  {name: "いくら", point: "80", shop: "海鮮居酒屋わかめ"},
+  {name: "あなご", point: "200", shop: "居酒屋チップ  渋谷道玄坂店"},
+  {name: "たいこ", point: "400", shop: "BAR hgoehuga"},
+  {name: "わかめ", point: "90", shop: "居酒屋チップ  渋谷道玄坂店"},
+  {name: "のりすけ", point: "190", shop: "居酒屋チップ  渋谷道玄坂店"},
+]
+
+const constent = (data) => {
   return(
+    <li>
     <a href="#">
     <div className="flex-contents list-inner">
       <div className="flex-list clerk-left">
@@ -26,43 +41,45 @@ const constent = () => {
       </div>
       <div className="flex-list clerk-right">
         <div className="clerk-summary">
-          <p className="clerk-summary-name">よっしー</p>
-          <p className="clerk-summary-restaurant">居酒屋チップ  渋谷道玄坂店</p>
+          <p className="clerk-summary-name">{data.name}</p>
+          <p className="clerk-summary-restaurant">{data.shop}</p>
         </div>
         <div className="clerk-point">
-          <p>134<span>ありがとう</span></p>
+          <p>{data.point}<span>ありがとう</span></p>
         </div>
       </div>
     </div>
   </a>
+  </li>
   )
 }
+const cardList = data.map(e => constent(e));
 
 const footer = () => {
   return(
     <footer id="footer">
       <ul className="flex-contents footer-list">
         <li className="flex-list">
-          {/* <a href="#" class="active"> */}
-            <img src={home_icon} alt="ホーム"/>>
+          <a href="#" className="active">
+            <img src={home_icon} alt="ホーム"/>
             <p>ホーム</p>
-          {/* </a> */}
+          </a>
         </li>
         <li className="flex-list">
           <div className="footer-main">
-            {/* <a href="#"> */}
+            <a href="#">
               <div className="footer-main-inner">
                 <img src={present_icon} alt="贈る"/>
                 <p>贈る</p>
               </div>
-            {/* </a> */}
+            </a>
           </div>
         </li>
         <li className="flex-list">
-          {/* <a href="#"> */}
-            <img src={mypage_icon} alt="マイページ"/>>
+          <a href="#">
+            <img src={mypage_icon} alt="マイページ"/>
             <p>マイページ</p>
-          {/* </a> */}
+          </a>
         </li>
       </ul>
     </footer>
@@ -80,9 +97,7 @@ class App extends Component {
             <p>登録している店員さん</p>
           </div>
           <ul className='home-list'>
-            <li>
-              {constent()}
-            </li>
+              {cardList}
           </ul>
           </div>
         </section>
