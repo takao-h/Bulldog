@@ -45,7 +45,7 @@ const constent = (data) => {
           <p className="clerk-summary-restaurant">{data.shop}</p>
         </div>
         <div className="clerk-point">
-          <p>{data.point}<span>ありがとう</span></p>
+          <p>{data.point}<span>ありがとう!</span></p>
         </div>
       </div>
     </div>
