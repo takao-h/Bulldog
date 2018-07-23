@@ -5,16 +5,8 @@ import home_icon from './images/home_icon.svg'
 import present_icon from './images/present_icon.svg'
 import mypage_icon from './images/mypage_icon.svg'
 import icon from './images/clerk.png'
+import header from './header'
 
-const header = () => {
-  return(
-    <header className="App-header">
-      <div id="logo">
-      <h1><img src={chipLogo}/></h1>
-      </div>
-    </header>
-  )
-}
 
 const list = [];
 const data = [
@@ -90,7 +82,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {header()}
+        <header/>
         <section id="home">
         <div className="inner">
           <div className="home-title">
