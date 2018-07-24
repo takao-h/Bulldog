@@ -6,7 +6,6 @@ const CardContenrt = () => {
     <div className='flex-contents list-inner'>
         <img src={}/>
     </div>
-    
   </Card>
 }
 export default CardContenrt;
